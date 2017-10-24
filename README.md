@@ -6,9 +6,10 @@ This script requires stashy python module. You can install with pip as follows:
 ```
 pip install -r /path/to/requirements.txt --install-option="--user"
 ```
-You also need to add your stash USER and PASSWORD:
+You also need to add your stash USER, PASSWORD and STASH-URL:
 ```python
-     USER = '<USER>'
-     PASSWORD = '<PASSWORD>'
+    USER = '<USER>'
+    PASSWORD = '<PASSWORD>'
+    STASH-URL = '<STASH-URL>'
 ```
 And that's all..

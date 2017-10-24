@@ -5,9 +5,9 @@
 Script to clone all the repos under a Stash project in local
 """
 
- __author__  = 'jotaele'
- __contact__ = 'antonjuanluis@gmail.com'
- __version__ = '0.1'
+__author__  = 'jotaele'
+__contact__ = 'antonjuanluis@gmail.com'
+__version__ = '0.1'
 
 # Modules
 import sys
@@ -20,10 +20,11 @@ if __name__ == '__main__':
 
     USER = '<USER>'
     PASSWORD = '<PASSWORD>'
+    STASH-URL = '<STASH-URL>'
 
     l = []
 
-    stash = stashy.connect("https://stash.zooplus.de", USER, PASSWORD)
+    stash = stashy.connect(STASH-URL, USER, PASSWORD)
     for p in stash.projects.list():
         d = { k: p[k] for k in ['name', 'key'] }
         l.append(d)
