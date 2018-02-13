@@ -54,16 +54,18 @@ if __name__ == '__main__':
 
     if not os.path.isdir(proj['name']):
         os.makedirs(proj['name'])
-    else:
-        print('Error: Project diretory exists')
-        sys.exit(1)
 
     os.chdir(proj['name'])
 
     for repo in stash.projects[proj['key']].repos.list():
         for url in repo["links"]["clone"]:
             if (url["name"] == "ssh"):
-                os.system("git clone %s" % url["href"])
+                if not os.path.isdir(repo['slug']):
+                    print("Cloning %s" % repo['slug'])
+                    os.system("git clone %s" % url['href'])
+                else:
+                    print("Pulling %s" % repo['slug'])
+                    os.system("git -C %s pull" % repo['slug'])
                 break
 
     sys.exit(0)
