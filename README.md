@@ -4,7 +4,7 @@
 
 This script requires stashy python module. You can install with pip as follows:
 ```
-pip install -r /path/to/requirements.txt --install-option="--user"
+pip install -r /path/to/requirements.txt --user
 ```
 You also need to add your stash USER, PASSWORD, STASH_URL and GIT_DIR:
 ```python
